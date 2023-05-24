@@ -1,0 +1,17 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "webserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "poulimenos",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "oracledb": "^5.5.0",
+    "sqlite3": "^5.1.6"
+  },
+  "description": ""
+}

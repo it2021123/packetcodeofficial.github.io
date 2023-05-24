@@ -1,0 +1,230 @@
+<html>
+  <head><title>Εφαρμογή Διαχείρισης Βιβλίων</title></head>
+  <body>
+    <style>
+   /* Στυλοποίηση για το κεντράρισμα του κειμένου στο header */
+   * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Header Styles */
+header {
+  height: 8cm;
+  background-color: rgb(67, 32, 3);
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+
+
+.headtitle {
+  position:relative;
+  left:12cm;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+color:bisque;
+}
+
+.searchform{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.searchform > * {
+  margin-right: 10px;
+}
+.footer {
+  height:5cm;
+  position: absolute;
+top:30cm;
+  width: 100%;
+  background:rgb(67, 32, 3);
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+#modal{
+  display:none;
+  position: fixed;
+  z-index:1;
+  padding-top: 100px;
+  width:100%;
+ overflow:auto;
+ background-color: #d7d8d9;
+
+}
+form {
+  position:absolute;
+top:10cm;
+left: 8cm;
+  margin: 20px;
+  padding: 20px;
+  width: 12cm;
+  height:25cm;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  background-color:#4d2b05;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color:rgb(74, 30, 5)
+}
+    </style>
+
+    <script src="/2021123/backend/webserver.js"></script>
+  <script src="clientSide.js">
+  </script>
+
+    <header>
+      <div class="headtitle"> 
+        <h1>Εφαρμογή Διαχείρισης Βιβλίων</h1>   
+     </div>
+    </header>
+<main> 
+  <div class="searchform">
+  <label for="search"><h1>Αναζήτηση:</h1></label>
+  <input type="text" id="search" name="search" style="width:15cm" required><br>
+  <input type="submit" > <ion-icon name="search-outline"></ion-icon>
+</div>
+<form id="formb">
+  <h2>Καταχώρηση Νέου Βιβλίου</h2>
+
+  <label for="title">Τίτλος:</label>
+  <input type="text" id="title" name="title" required><br>
+
+  <label for="author">Συγγραφέας:</label>
+  <input type="text" id="author" name="author" required><br>
+
+  <label for="genre">Είδος:</label>
+  <select id="genre" name="genre">
+    <option value="Science fiction">Science fiction</option>
+    <option value="Satire">Satire</option>
+    <option value="Drama">Drama</option>
+    <option value="Action and Adventure">Action and Adventure</option>
+    <option value="Romance">Romance</option>
+    <option value="Mystery">Mystery</option>
+    <option value="Horror">Horror</option>
+  </select><br>
+
+  <label for="price">Τιμή:</label>
+  <input type="text" id="price" name="price" required><br>
+  
+  <input type="submit" id="fsumbit" value="Αποστολή">
+  <input type="reset" value="Επαναφορά">
+</form>
+
+</main>
+
+  <footer class="footer">
+   
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="call"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="mail-unread-outline"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+   
+    <p>&copy;2023 Διαχείριση Βιβλίων | Kατοχύρωση Βιβλίων | Αναζήτηση Βιβλίων</p>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body></html>
